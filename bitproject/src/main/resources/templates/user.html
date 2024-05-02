@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+
+    <!--  my own stylesheets and icons start-->
+    <link rel="icon" href="/images/home.gif">
+    <link rel="stylesheet" href="/style/employee.css">
+    <link rel="stylesheet" href="/style/button.css">
+
+    <!--  my own stylesheets and icons end-->
+
+    <!--  bootstrap link start-->
+    <link rel="stylesheet" href="/bootstrap-5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2/css/all.css">
+    <script src="/bootstrap-5.2.3/js/bootstrap.bundle.min.js"></script>
+    <!--  bootstrap link end-->
+
+    <!--link table common function js file-->
+    <script src="/script/tablecommonfuntion.js"></script>
+
+
+    <!--  link function validation js start -->
+    <script src="/script/validationFunction.js"></script>
+    <!--  link function validation js end -->
+
+    <!--link common function js start-->
+    <script src="/script/commonFunction.js"></script>
+    <!--link common function js end-->
+
+    <!--    user js link start-->
+    <!--    <script src="user2.js"></script>-->
+    <script src="/controllerjs/user.js"></script>
+    <!--    user js link end-->
+
+    <script src="/script/jQuery v3.7.1.js"></script>
+
+</head>
+<body>
+
+<!--container fluid start-->
+<div class="container-fluid">
+
+    <!--    header area start-->
+    <div class="row mt-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2 class="h2 text-center bg-secondary" style="padding: 5px">
+                <i class="fa-solid fa-user"></i> user management
+            </h2>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!--    header area end-->
+
+
+    <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <!--        form area start-->
+        <div class="col-md-8">
+            <form onsubmit="return false" id="formUser">
+
+                <!--                        employee start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="selectEmployee" class="form-label fw-bold">Employee <i
+                                class="text-danger">*</i> </label>
+                    </div>
+                    <div class="col-md-6">
+                        <select id="selectEmployee" class="form-select text-center" required
+                                onchange="selectDValidation(this,'','user','employee_id')">
+                            <option value="" selected disabled>select an option</option>
+                            <option value="v1">value1</option>
+                            <option value="v2">value2</option>
+                            <option value="v3">value3</option>
+                        </select>
+                    </div>
+
+                </div>
+                <!--                        employee end-->
+
+                <!--                        username start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="textUserName" class="form-label fw-bold">user name <i
+                                class="text-danger">*</i></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="textUserName" class="form-control text-center" required
+                               placeholder="enter user name" onkeyup="textValidator(this,'','user','username')">
+                    </div>
+                </div>
+                <!--                        username end-->
+
+                <!--                        password start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="textPassword" class="form-label fw-bold">password <i
+                                class="text-danger">*</i></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" id="textPassword" class="form-control text-center" required
+                               placeholder="enter your password" onkeyup="textValidator(this,'','user','password')">
+                    </div>
+                </div>
+                <!--                        password end-->
+
+                <!--                        retype password start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="textRePassword" class="form-label fw-bold">re password <i class="text-danger">*</i></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="password" id="textRePassword" class="form-control text-center" required
+                               placeholder="retype your password" onkeyup="textPasswordReTypeValidator()">
+                    </div>
+                </div>
+                <!--                        retype password end-->
+
+
+                <!--                        email start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="textEmail" class="form-label fw-bold">email <i class="text-danger">*</i></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" id="textEmail" class="form-control text-center" required
+                               placeholder="enter your email here" onkeyup="textValidator(this,'','user','email')">
+                    </div>
+                </div>
+                <!--                        email end-->
+
+                <!--                        role area start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="form-label fw-bold">role <i class="text-danger">*</i></label>
+                    </div>
+                    <div id="divRoles">
+
+                        <!--                        <input type="checkbox"  id="checkBoxRoleM" class="form-check-input"><span class="fw-bold text-center"> Manager</span>-->
+                        <!--                        &lt;!&ndash;                                    sir ge eke methana lable eka passe thiyenne&ndash;&gt;-->
+                        <!--                        <input type="checkbox"  id="checkBoxRoleC" class="form-check-input"><span class="fw-bold text-center"> cashier</span>-->
+
+                        <!--                        <input type="checkbox"  id="checkBoxRoleSM" class="form-check-input"><span class="fw-bold text-center"> store manger</span>-->
+
+                    </div>
+                </div>
+                <!--                        role area end-->
+
+
+                <!--                        status area start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="checkBoxStatus" class="form-label fw-bold">status <i
+                                class="text-danger">*</i></label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="checkbox" id="checkBoxStatus" class="form-check-input" onchange="
+                        if(this.checked){
+                            user.status=true
+                        }else{
+                            user.status=false;
+                            labelStatus.innerText='user account is in-active'
+
+                        }"
+
+                        >
+                        <label class="form-check-label fw-bold" id="labelStatus">user account is not active</label>
+                    </div>
+                </div>
+                <!--                        status area end-->
+
+
+                <!--                button area start-->
+                <div class="row mt-5">
+                    <div class="col-md-4 text-center">
+                        <button type="reset" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i> reset</button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button type="submit" class="btn btn-warning" onclick="updateUserForm()"><i
+                                class="fa-solid fa-pen-to-square"></i> update
+                        </button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button type="submit" class="btn btn-primary" onclick="submitUserForm()"><i
+                                class="fa-solid fa-arrow-right-to-bracket"></i> submit
+                        </button>
+
+                    </div>
+                </div>
+                <!--                button area end-->
+
+            </form>
+        </div>
+        <!--        form area end-->
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+
+    <div class="row mt-5">
+
+        <!--        button section start-->
+        <!-- <div class="row mt-5">
+            <div class="col-md-5"></div>
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-end">
+                <button type="button" class="btn btn-success" onclick="generateTable()"><i class="fa-solid fa-gear"></i> generate</button>
+            </div>
+        </div> -->
+        <!--            button section end        -->
+
+
+        <!--        header section start-->
+        <div class="row mt-2">
+            <h2 class="h2 bg-secondary text-center" style="padding: 10px"><i class="fa-solid fa-table"></i> user
+                management table</h2>
+        </div>
+        <!--        header section end-->
+
+
+        <!--        table section start-->
+        <div class="row mt-2">
+            <table class="table table-hover" id="tableUser">
+                <thead class="table-info">
+                <th>#</th>
+                <th>employee</th>
+                <th>user name</th>
+                <th>email</th>
+                <th>role</th>
+                <th>status</th>
+                <th>modify</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>kawshan virantha</td>
+                    <td>kawshan</td>
+                    <td>kawshan@gmail.com</td>
+                    <td>manager</td>
+                    <td>active</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        table section end-->
+
+
+    </div>
+
+
+
+
+
+</div>
+<!--container fluid end-->
+
+
+
+
+<table class="table table-bordered table-hover table-primary" id="tableUserPrint" style="display: none;">
+    <tr>
+        <th colspan="2">
+            user details
+        </th>
+    </tr>
+
+    <tr>
+        <th>user name</th>
+        <td id="tdUsername"></td>
+    </tr>
+
+    <tr>
+        <th>user employee</th>
+        <td id="tdEmployee"></td>
+    </tr>
+
+    <tr>
+        <th>user email</th>
+        <td id="tdEmail"></td>
+    </tr>
+
+    <tr>
+        <th>user status</th>
+        <td id="tdStatus"></td>
+    </tr>
+</table>
+
+
+
+
+</body>
+</html>

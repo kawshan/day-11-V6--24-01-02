@@ -1,0 +1,37 @@
+.btnAll{
+    width: 25%;
+    border-radius: 25px;
+}
+.btn-clear{
+background-color: rgb(250,252,252);
+    border: 1px solid rgba(0,238,255,0.70);
+    color: rgb(0,238,255);
+}
+
+.btn-update{
+    background-color: rgb(250,252,252);
+    border: 1px solid rgba(0,238,255,0.70);
+    color: rgb(0,238,255);
+}
+
+.btn-add{
+    background-color: rgb(250,252,252);
+    border: 1px solid rgba(0,238,255,0.70);
+    color: rgb(0,238,255);
+}
+
+.btn-clear:hover{
+    background-color: rgb(250,252,252);
+    border: 1px solid rgba(0,238,255,0.70);
+    color: rgb(0,238,255);
+}
+.btn-update:hover{
+    background-color: rgb(250,252,252);
+    border: 1px solid rgba(0,238,255,0.70);
+    color: rgb(0,238,255);
+}
+.btn-add:hover{
+    background-color: rgb(16, 233, 233);
+    border: 1px solid rgba(44, 154, 162, 0.7);
+    color: rgb(6, 244, 255);
+}

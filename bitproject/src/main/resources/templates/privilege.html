@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>privilege</title>
+
+    <!--  my own stylesheets and icons start-->
+    <link rel="icon" href="/images/home.gif">
+    <link rel="stylesheet" href="/style/employee.css">
+    <link rel="stylesheet" href="/style/button.css">
+
+    <!--  my own stylesheets and icons end-->
+
+    <!--  bootstrap link start-->
+    <link rel="stylesheet" href="/bootstrap-5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2/css/all.css">
+    <script src="/bootstrap-5.2.3/js/bootstrap.bundle.min.js"></script>
+    <!--  bootstrap link end-->
+
+
+
+    <script src="/script/commonFunction.js"></script>
+    <script src="/script/jQuery v3.7.1.js"></script>
+    <script src="/script/tablecommonfuntion.js"></script>
+    <script src="/script/validationFunction.js"></script>
+
+    <!--    homework js link start-->
+    <script src="/controllerjs/privilege.js"></script>
+    <!--    homework js link end-->
+
+</head>
+<body>
+
+<!--container fluid start-->
+<div class="container-fluid">
+
+    <!--    header area start-->
+    <div class="row mt-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2 class="h2 text-center bg-secondary" style="padding: 5px">
+                <i class="fa-solid fa-user"></i> privilege management
+            </h2>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!--    header area end-->
+
+
+
+    <div class="row">
+
+        <div class="col-md-2"></div>
+
+        <!--        form area start-->
+        <div class="col-md-8">
+            <form onsubmit="return false" >
+
+                <!--                role start-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="comboBoxRole" class="form-label fw-bold">role</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-select text-center fw-bold" id="comboBoxRole" required>
+                            <option value="" selected disabled>select a option</option>
+                            <option value="working">working</option>
+                            <option value="resign">resign</option>
+                            <option value="delete">delete</option>
+                        </select>
+                    </div>
+                </div>
+                <!--                role end-->
+
+
+                <!--                module start-->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="comboBoxModule" class="form-label fw-bold">module</label>
+                    </div>
+                    <div class="col-md-8">
+                        <select class="form-select text-center fw-bold" id="comboBoxModule" required>
+                            <option value="" selected disabled>select a option</option>
+                            <option value="1">module 1</option>
+                            <option value="2">module 2</option>
+                        </select>
+                    </div>
+                </div>
+                <!--                module end-->
+
+
+                <!--              checkbox select  start -->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="checkBoxSelect" class="form-label fw-bold">select</label>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <input type="checkbox" class="form-check-input" id="checkBoxSelect" required>  select privilege not granted
+                    </div>
+                </div>
+                <!--              checkbox select  end-->
+
+
+
+                <!--              checkbox insert  start -->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="checkBoxInsert" class="form-label fw-bold">insert</label>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <input type="checkbox" class="form-check-input" id="checkBoxInsert" required>  insert privilege not granted
+                    </div>
+                </div>
+                <!--              checkbox insert  end-->
+
+
+                <!--              checkbox update  start -->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="checkBoxUpdate" class="form-label fw-bold">update</label>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <input type="checkbox" class="form-check-input" id="checkBoxUpdate" required>  update privilege not granted
+                    </div>
+                </div>
+                <!--              checkbox update  end-->
+
+
+                <!--              checkbox delete  start -->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="checkBoxDelete" class="form-label fw-bold">delete</label>
+                    </div>
+                    <div class="col-md-8 text-center">
+                        <input type="checkbox" class="form-check-input" id="checkBoxDelete" required>  delete privilege not granted
+                    </div>
+                </div>
+                <!--              checkbox delete  end-->
+
+
+                <!--                button area start-->
+                <div class="row mt-5">
+                    <div class="col-md-4 text-center">
+                        <button type="reset" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>  reset</button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i> update</button>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket" onclick="privilegeSubmit()"></i> submit</button>
+
+                    </div>
+                </div>
+                <!--                button area end-->
+
+            </form>
+        </div>
+        <!--        form area end-->
+
+
+        <div class="col-md-2"></div>
+    </div>
+
+
+    <div class="row mt-5">
+
+        <!--        button section start-->
+        <!-- <div class="row mt-5">
+            <div class="col-md-5"></div>
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-end">
+                <button type="button" class="btn btn-success" onclick="generateTable()"><i class="fa-solid fa-gear"></i> generate</button>
+            </div>
+        </div> -->
+        <!--            button section end        -->
+
+
+        <!--        header section start-->
+        <div class="row mt-2">
+            <h2 class="h2 bg-secondary text-center" style="padding: 10px"><i class="fa-solid fa-table"></i>  privilege management table</h2>
+        </div>
+        <!--        header section end-->
+
+
+        <!--        table section start-->
+        <div class="row mt-2">
+            <table class="table table-hover" id="tablePrivilege">
+                <thead class="table-info">
+                <th>#</th>
+                <th>role</th>
+                <th>module</th>
+                <th>select</th>
+                <th>insert</th>
+                <th>update</th>
+                <th>delete</th>
+                <th>modify</th>
+                </thead>
+                <tbody>
+                <tr>
+                     <td>1</td>
+                    <td>manager</td>
+                    <td>employee</td>
+                    <td>granted</td>
+                    <td>granted</td>
+                    <td>granted</td>
+                    <td>granted</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--        table section end-->
+
+
+    </div>
+
+
+
+
+
+
+</div>
+<!--container fluid end-->
+
+</body>
+</html>

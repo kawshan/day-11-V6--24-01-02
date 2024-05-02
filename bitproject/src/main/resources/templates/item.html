@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>item</title>
+
+    <!--    start of my styles and images-->
+    <link rel="icon" href="/images/home.gif">
+    <link rel="stylesheet" href="/style/common.css">
+    <link rel="stylesheet" href="/style/button.css">
+    <link rel="stylesheet" href="/style/employee.css">
+    <!--    end of my styles and images-->
+
+    <!--        bootstrap css link-->
+    <link rel="stylesheet" href="/bootstrap-5.2.3/css/bootstrap.min.css">
+
+    <!--    js link-->
+    <script src="/bootstrap-5.2.3/js/bootstrap.bundle.min.js"></script>
+
+    <!--    link font aws css-->
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2/css/all.css">
+
+    <!--link table common function js file-->
+    <script src="/script/tablecommonfuntion.js"></script>
+
+    <!--  link function validation js start -->
+    <script src="/script/validationFunction.js"></script>
+    <!--  link function validation js end -->
+
+
+    <!--link common function js start-->
+    <script src="/script/commonFunction.js"></script>
+    <!--link common function js end-->
+
+    <!--  link employee js-->
+    <script src="/controllerjs/item.js"></script>
+
+
+    <script src="/script/jQuery v3.7.1.js"></script>
+
+
+</head>
+<body>
+<div class="container-fluid">
+
+    <!--    header area start-->
+    <div class="row mt-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h2 class="h2 text-center bg-secondary" style="padding: 5px">
+                item management
+            </h2>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <!--    header area end-->
+
+
+    <div class="row mt-2">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8">
+            <!--            form area start-->
+            <form onsubmit="return false">
+
+
+                <!--                category brand purchase type start-->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="selectCategory" class="fw-bold form-label">
+                            category <i class="text-danger">*</i>
+                        </label>
+                        <select id="selectCategory" class="form-select text-center" required>
+                            <option value="" selected disabled> select a category</option>
+                            <option value="">category one</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="selectBrand" class="fw-bold form-label">
+                            brand <i class="text-danger">*</i>
+                        </label>
+                        <select id="selectBrand" class="form-select text-center" required>
+                            <option value="" selected disabled>select an option</option>
+                            <option value="">brand one</option>
+                            <option value="">brand two</option>
+                            <option value="">brand three</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="selectPurchaseType" class="fw-bold form-label">
+                            purchase type <i class="text-danger">*</i>
+                        </label>
+                        <select id="selectPurchaseType" class="form-select text-center" required>
+                            <option value="" selected disabled>select an option</option>
+                            <option value="cash">cash</option>
+                            <option value="card">card</option>
+                        </select>
+                    </div>
+                </div>
+                <!--                category brand purchase type end-->
+
+
+                <!--                subCategory unit type start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="selectSubCategory" class="fw-bold form-label">
+                            sub category <i class="text-danger">*</i>
+                        </label>
+
+                        <select id="selectSubCategory" class="form-select text-center" required>
+                            <option value="" selected disabled>select an option</option>
+                            <option value="sub 1">sub 1</option>
+                            <option value="sub 2">sub 2</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="selectUnitType" class="fw-bold form-label">
+                            unit type <i class="text-danger">*</i>
+                        </label>
+                        <div class="input-group">
+                            <select id="selectUnitType" class="form-select text-center" required>
+                                <option value=""selected disabled>select an option</option>
+                                <option value="">unit type one</option>
+                                <option value="">unit type two</option>
+                            </select>
+                            <select id="" class="form-select text-center" required>
+                                <option value="" selected>G</option>
+                                <option value="">KG</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!--                subCategory unit type end-->
+
+<!--                item name start-->
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <label for="textItemName" class="form-label fw-bold">item name
+                        <i class="text-danger">*</i>
+                        </label>
+
+                        <input type="text" id="textItemName" class="form-control text-center" required placeholder="enter item name">
+                    </div>
+                </div>
+<!--                item name end-->
+
+
+<!--                purchase price sales price re-order point start-->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <label for="textPurchasePrice" class="form-label fw-bold">
+                            purchase price <i class="text-danger">*</i>
+                        </label>
+                        <input type="text" id="textPurchasePrice" class="form-control text-center" required placeholder="enter purchase price">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="textSalesPrice" class="form-label fw-bold">
+                            sales price <i class="text-danger">*</i>
+                        </label>
+                        <input type="text" id="textSalesPrice" class="form-control text-center" required placeholder="entre sales price">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="textReOrderPoint" class="form-label fw-bold">
+                            re order point <i class="text-danger">*</i>
+                            <input type="text" id="textReOrderPoint" class="form-control text-center" required placeholder="enter re order point">
+                        </label>
+                    </div>
+                </div>
+<!--                purchase price sales price re-order point end-->
+
+
+<!--                note status start-->
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="textNote" class="form-label fw-bold">
+                            note <i class="text-primary">(optional)</i>
+                        </label>
+                        <input type="text" id="textNote" class="form-control text-center"  placeholder="enter note">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="selectStatus" class="form-label fw-bold">
+                            status <i class="text-danger">*</i>
+                        </label>
+
+                        <select id="selectStatus" class="form-select text-center" required>
+                            <option value="" selected disabled>select an option</option>
+                            <option value="">status one</option>
+                            <option value="">status two</option>
+                            <option value="">delete</option>
+                        </select>
+                    </div>
+                </div>
+<!--                note status end-->
+
+
+<!--                button area start-->
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <button type="reset" class="btn btn-danger"><i class="fa-solid fa-trash-can fa-beat"></i> reset</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square fa-beat"></i>update</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket fa-beat"></i>add</button>
+                    </div>
+                </div>
+<!--                button area end-->
+
+
+            </form>
+            <!--            form area end-->
+
+
+
+
+
+        </div>
+        <div class="col-md-2"></div>
+
+
+    </div>
+
+<!--    table area start-->
+    <table class="table table-bordered table-striped" id="tableItem">
+        <thead class="table-secondary">
+        <th>#</th>
+        <th>category</th>
+        <th>brand</th>
+        <th>purchase type</th>
+        <th>sub category</th>
+        <th>unit type</th>
+        <th>item name</th>
+        <th>purchase price</th>
+        <th>sales price</th>
+        <th>re order point</th>
+        <th>status</th>
+        <th>modify</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>cat one</td>
+            <td>brand one</td>
+            <td>purchase type one</td>
+            <td>sub one</td>
+            <td>unit one</td>
+            <td>item one</td>
+            <td>purchase price </td>
+            <td>sales price</td>
+            <td>re order</td>
+            <td>status</td>
+            <td>
+                <button type="button" class="btn btn-outline-warning"><i class="fa-solid fa-recycle"></i>edit</button>
+                <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-user"></i>delete</button>
+                <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-print"></i>view</button>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+<!--    table area end-->
+
+
+</div>
+</body>
+</html>
